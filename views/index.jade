@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  include header.jade
+
+  main
+    .container-fluid
+      .col-md-12
+        .row
+          if errors.length
+            .alert.alert-danger
+                a.close(href='#', data-dismiss='alert', aria-label='close') ×
+                for error in errors
+                    div=error.msg
+          include nav.jade
+          include form.jade

@@ -1,0 +1,25 @@
+ul.nav.nav-tabs(role='tablist')
+    li(role='presentation').active
+        a(data-toggle='tab', role='tab', href='#about-child', id='about-child-tab') About the child&nbsp;
+            if !sectionErrors.aboutchild && sectionErrors 
+                i.glyphicon.glyphicon-ok#about-child-tab-ok
+            else if sectionErrors.aboutchild
+                span.badge#about-child-tab-errors=sectionErrors.aboutchild.msg          
+    li(role='presentation')
+        a(data-toggle='tab', role='tab', href='#about-child-lives', id='about-child-lives-tab') About where the child lives&nbsp;
+            if !sectionErrors.childlives && sectionErrors
+                i.glyphicon.glyphicon-ok#about-child-lives-tab-ok
+            else if sectionErrors.childlives
+                span.badge#about-child-lives-tab-errors=sectionErrors.childlives.msg
+    li(role='presentation')
+        a(data-toggle='tab', role='tab', href='#child-illnesses', id='child-illnesses-tab') About the child’s illnesses or disabilities&nbsp;
+            if !sectionErrors.childillnesses && sectionErrors
+                i.glyphicon.glyphicon-ok#child-illnesses-tab-ok
+            else if sectionErrors.childillnesses
+                span.badge#child-illnesses-tab-errors=sectionErrors.childillnesses.msg
+    li(role='presentation')
+        a(data-toggle='tab', role='tab', href='#additional-info', id='additional-info-tab') Additional Information&nbsp;
+            if !sectionErrors.additionalinfo && sectionErrors
+                i.glyphicon.glyphicon-ok#additional-info-tab-ok
+            else if sectionErrors.additionalinfo 
+                span.badge#additional-info-tab-errors=sectionErrors.additionalinfo.msg

@@ -1,0 +1,236 @@
+form.form-horizontal(autocomplete='off', name='disabilityForm', method='post', action='/dla-form',novalidate)
+    .tab-content
+        .tab-pane.fade.in.active#about-child
+            h2 About the child
+
+            .form-group
+                label.control.label-left.col-sm-3(for='surname') Surname or family name
+                .col-sm-6
+                    input.form-control.form-elem(type='text', name='surname', id='surname', required, value=form.surname)
+                    if errors.surname
+                        span.error.help-block.surname_error=errors.surname.msg
+            .form-group
+                label.control.label-left.col-sm-3(for='othernames') All other names in full
+                .col-sm-6
+                    input.form-control.form-elem(type='text', name='othernames', id='othernames', required, value=form.othernames)
+                    if errors.othernames
+                        span.error.help-block.othernames_error=errors.othernames.msg
+            .form-group
+                label.control.label-left.col-sm-3(for='childref') Child reference number (if you know it)
+                .col-sm-6
+                    table.table.table-bordered.table-condensed
+                        tbody
+                            tr
+                                td
+                                    input.form-control.form-elem(type='text', name='childref1', id='childref1', value=form.childref1)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref2', id='childref2', value=form.childref2)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref3', id='childref3', value=form.childref3)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref4', id='childref4', value=form.childref4)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref5', id='childref5', value=form.childref5)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref6', id='childref6', value=form.childref6)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref7', id='childref7', value=form.childref7)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref8', id='childref8', value=form.childref8)
+                                td
+                                    input.form-control.form-elem(type='text', name='childref9', id='childref9', value=form.childref9)
+                    if errors.childref1
+                        span.error.childRefError.help-block.childref_error=errors.childref1.msg
+            .form-group
+                label.control.label-left.col-sm-3(for='dob') Date of birth (day/month/year)
+                .col-sm-6
+                    input.form-control.form-elem(type='text', name='dob', id='dob', required, value=form.dob)
+                    if errors.dob
+                        span.error.help-block.dob_error=errors.dob.msg   
+            .form-group
+                label.control.label-left.col-sm-3(for='sex') Sex
+                .col-sm-6
+                    label.radio-inline
+                        input(type='radio', name='sex', value='M', id='sexM', required)
+                        | Male
+                    label.radio-inline
+                        input(type='radio', name='sex', value='F', id='sexF', required)
+                        | Female
+                    if errors.sex
+                        span.error.help-block.sex_error=errors.sex.msg  
+        .tab-pane.fade#about-child-lives
+            h2 About where the child lives
+            .form-group
+                label.control.label-left.col-sm-3(for='street') Street Number and Name
+                .col-sm-6
+                    input.form-control.form-elem(type='text', name='street', id='street', required, value=form.street)
+                    if errors.street
+                        span.error.help-block.street_error=errors.street.msg  
+            .form-group
+                label.control.label-left.col-sm-3(for='city') City/Town
+                .col-sm-6
+                    input.form-control.form-elem(type='text', name='city', id='city', required, value=form.city)
+                    if errors.city
+                        span.error.help-block.city_error=errors.city.msg  
+            .form-group
+                label.control.label-left.col-sm-3(for='postcode') Post Code
+                .col-sm-6
+                    input.form-control.form-elem(type='text', name='postcode', id='postcode', required, value=form.postcode)
+                    if errors.postcode
+                        span.error.help-block.postcode_error=errors.postcode.msg  
+            h2 Special Rules
+            p Are you claiming for the child under the special rules?
+            p 
+            | The special rules apply to children who have a progressive disease and are not
+            | expected to live longer than another 6 months.
+            .form-group
+                label.control.label-left.col-sm-3(for='claiming')
+                .col-sm-6
+                    label.radio-inline
+                        input(type='radio', name='claiming', value='Y', id='claimingY', required)
+                        | Yes
+                    label.radio-inline
+                        input(type='radio', name='claiming', value='N', id='claimingN', required)
+                        | No
+                    if errors.claiming
+                        span.error.help-block.claiming_error=errors.claiming.msg  
+            .form-group
+                label.control.label-left.col-sm-3(for='nationality') What is the child’s nationality?
+                .col-sm-6
+                    input.form-control.form-elem(type='text', name='nationality', id='nationality', required, value=form.nationality)
+                    if errors.nationality
+                        span.error.help-block.nationality_error=errors.nationality.msg  
+            .form-group
+                label.control.label-left.col-sm-3(for='ukliving') Does the child normally live in Great Britain?
+                                        | Great Britain is England, Scotland and Wales.
+                .col-sm-6
+                    label.radio-inline
+                        input(type='radio', name='ukliving', value='Y', id='uklivingY', required)
+                        | Yes
+                    label.radio-inline
+                        input(type='radio', name='ukliving', value='N', id='uklivingN', required)
+                        | No
+                    if errors.ukliving
+                        span.error.help-block.ukliving_error=errors.ukliving.msg
+            .form-group
+                label.control.label-left.col-sm-3(for='abroad4weeks') Has the child been abroad for more than 4 weeks at a time in the last 3 years?
+                                        | Abroad means out of Great Britain.
+                .col-sm-6
+                    label.radio-inline
+                        input(type='radio', name='abroad4weeks', value='Y', id='abroad4weeksY', required)
+                        | Yes
+                    label.radio-inline
+                        input(type='radio', name='abroad4weeks', value='N', id='abroad4weeksN', required)
+                        | No
+                    if errors.abroad4weeks
+                        span.error.help-block.abroad4weeks_error=errors.abroad4weeks.msg
+        .tab-pane.fade#child-illnesses
+            h2 About the child’s illnesses or disabilities
+            p
+                ul
+                    li Illness or disability may be a physical, sight, hearing, speech, learning or
+                    | developmental difficulty, or a mental-health problem. If they don’t have a
+                    | diagnosis, tell us their difficulty. For example, if they have problems learning
+                    | new things and you don’t know why, put ‘Learning problem’.
+                    li How long may be from birth or the date the problem started. It is not the date
+                    | of diagnosis.
+                    li Treatment may be medicines such as tablets, creams or injections and things
+                    | like speech, occupational or play therapy, physiotherapy or counselling.
+                    li How often they have each treatment and for how long. The label on the child’s
+                    | medicine has the name, dose and how often to take it.
+            p If you have a spare up-to-date prescription list please scan it and attach it
+            .form-group
+                label.control.label-left.col-sm-3(for='prescription1') Prescription Upload 1
+                .col-sm-6
+                    input.form-control.form-elem(type='file', name='prescription1', id='prescription1', value=form.prescription1)
+            .form-group
+                label.control.label-left.col-sm-3(for='prescription2') Prescription Upload 2
+                .col-sm-6
+                    input.form-control.form-elem(type='file', name='prescription2', id='prescription2', value=form.prescription2)
+            .form-group
+                label.control.label-left.col-sm-3(for='prescription3') Prescription Upload 3
+                .col-sm-6
+                    input.form-control.form-elem(type='file', name='prescription3', id='prescription3', value=form.prescription3)
+
+            p List the child’s illnesses or disabilities in the table below.
+            .form-group
+                .col-sm-12
+                    table.table
+                        thead
+                            tr 
+                                th Illness or disability
+                                th How long have they had it?
+                                th What treatment do they have for it?
+                                th How often do they have treatment?
+                        tbody
+                            tr
+                                td
+                                    input.form-control.form-elem(type='text', name='illness1', id='illness1', value=form.illness1)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness1Duration', id='illness1-duration', value=form.illness1Duration)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness1Treatment', id='illness1-treatment', value=form.illness1Treatment)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness1Dosage', id='illness1-dosage', value=form.illness1Dosage)  
+                            tr
+                                td
+                                    input.form-control.form-elem(type='text', name='illness2', id='illness2', value=form.illness2)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness2Duration', id='illness2-duration', , value=form.illness2Duration)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness2Treatment', id='illness2-treatment', value=form.illness2Treatment)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness2Dosage', id='illness2-dosage', value=form.illness2Dosage)
+                            tr
+                                td
+                                    input.form-control.form-elem(type='text', name='illness3', id='illness3', value=form.illness3)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness3Duration', id='illness3-duration', value=form.illness3Duration)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness3Treatment', id='illness3-treatment', value=form.illness3Treatment)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness3Dosage', id='illness3-dosage', value=form.illness3Dosage)
+                            tr
+                                td
+                                    input.form-control.form-elem(type='text', name='illness4', id='illness4', value=form.illness4)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness4Duration', id='illness4-duration', value=form.illness4Duration)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness4Treatment', id='illness4-treatment', value=form.illness4Treatment)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness4Dosage', id='illness4-dosage', value=form.illness4Dosage)
+                            tr
+                                td
+                                    input.form-control.form-elem(type='text', name='illness5', id='illness5', value=form.illness5)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness5Duration', id='illness5-duration', value=form.illness5Duration)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness5Treatment', id='illness5-treatment', value=form.illness5Treatment)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness5Dosage', id='illness5-dosage', value=form.illness5Dosage)
+                            tr
+                                td
+                                    input.form-control.form-elem(type='text', name='illness6', id='illness6', value=form.illness6)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness6Duration', id='illness6-duration', value=form.illness6Duration)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness6Treatment', id='illness6-treatment', value=form.illness6Treatment)
+                                td
+                                    input.form-control.form-elem(type='text', name='illness6Dosage', id='illness6-dosage', value=form.illness6Dosage)
+        .tab-pane.fade#additional-info
+            h2 Additional Information
+            p Please tell us any other information which you think may support this application
+
+            .form-group
+                .col-sm-12
+                    textarea.form-control.form-elem(rows='6', name='additionalinfo', id='additionalinfo', value=form.additionalinfo)
+            .form-group
+                label.control.label-left.col-sm-3(for='email') Please provide your e-mail for confirmation purposes
+                .col-sm-6
+                    input.form-control.form-elem(type='email', name='email', id='email', required, value=form.email)
+                    if errors.email
+                        span.error.help-block.email_error=errors.email.msg
+    hr
+    .form-group
+        .col-sm-12
+            button.btn.btn-success.pull-right(id='submitBtn', title='Click to submit form') Submit
