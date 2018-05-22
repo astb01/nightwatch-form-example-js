@@ -5,11 +5,10 @@
   "description": "Simple Form Demo",
   "scripts": {
     "start": "gulp",
-    "test": "gulp test",
-    "postinstall": "./node_modules/protractor/bin/webdriver-manager update"
+    "test": "gulp test"
   },
   "dependencies": {
-    "body-parser": "~1.18.2",
+    "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
@@ -17,15 +16,15 @@
     "express-validator": "^4.3.0",
     "gulp-exit": "0.0.2",
     "jade": "~1.11.0",
-    "jasmine-core": "^2.8.0",
-    "joi": "^13.0.2",
-    "karma": "^2.0.0",
-    "karma-jasmine": "^1.1.1",
-    "moment": "^2.20.1",
+    "jasmine-core": "^2.99.1",
+    "joi": "^13.3.0",
+    "karma": "^2.0.2",
+    "karma-jasmine": "^1.1.2",
+    "moment": "^2.22.1",
     "morgan": "~1.9.0",
     "nightwatch-html-reporter": "^2.0.5",
     "serve-favicon": "~2.4.5",
-    "uuid": "^3.1.0"
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "chromedriver": "^2.38.3",
@@ -38,10 +37,10 @@
     "gulp-open": "^3.0.1",
     "gulp-util": "^3.0.8",
     "jshint-stylish": "^2.0.1",
-    "nightwatch": "^0.9.19",
-    "nodemon": "^1.14.7",
+    "nightwatch": "^0.9.21",
+    "nodemon": "^1.17.4",
     "requirejs": "^2.1.18",
-    "selenium-server-standalone-jar": "^3.8.1",
-    "watchify": "^3.9.0"
+    "selenium-server-standalone-jar": "^3.12.0",
+    "watchify": "^3.11.0"
   }
 }
