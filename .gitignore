@@ -63,3 +63,6 @@ typings/
 
 # Generated Reports
 reports/
+
+# Screenshots
+tests/e2e/screenshots/
