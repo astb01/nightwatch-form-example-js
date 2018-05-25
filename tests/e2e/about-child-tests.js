@@ -29,8 +29,7 @@ module.exports = {
             .expect.element('#about-child-tab-errors').to.not.be.present;
 
         browser.saveScreenshot(browser.globals.screenshots_folder + 'about-child-tests-1.png');
-    }
-    /*,
+    },
     "When 'Surname' not populated an error should be displayed": function(browser){
         browser
             .useCss()
@@ -138,5 +137,5 @@ module.exports = {
             .assert.containsText('.dob_error', 'Date of Birth is not valid. Please enter as DD/MM/YYYY');  
 
         browser.saveScreenshot(browser.globals.screenshots_folder + 'about-child-tests-dob-validated.png');    
-    }*/
+    }
 }
