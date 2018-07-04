@@ -1,11 +1,11 @@
 {
   "src_folders": [ "tests/e2e/" ],
-  "jar_path": "./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.8.1.jar",
+  "jar_path": "./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.12.0.jar",
   "globals_path": "nightwatch-globals.js",
   "output_folder": "./reports/",
   "selenium": {
     "start_process": true,
-    "server_path": "./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.8.1.jar",
+    "server_path": "./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.12.0.jar",
     "log_path": "reports/",
     "host": "127.0.0.1",
     "port": 4444,
@@ -16,7 +16,7 @@
   },
   "test_settings" : {
       "default" : {
-        "launch_url" : "http://localhost:9000",
+        "launch_url" : "http://localhost:8080",
         "selenium_port"  : 4444,
         "selenium_host"  : "localhost",
         "desiredCapabilities": {

@@ -55,9 +55,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const port = app.get('port');
+const port = 8080;
 
-app.listen(port, function () {
+app.listen(port, () => {
   console.log(`Running application on port ${port}`);
 });
 

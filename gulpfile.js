@@ -69,7 +69,7 @@ gulp.task('cleanScreenshots', () => {
 
 gulp.task('banner', () => {
   return gutil.log(
-    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n                    $$$$$$$\\  $$\\      $$\\ $$$$$$$\\\n                    $$  __$$\\ $$ | $\\  $$ |$$  __$$\\\n                    $$ |  $$ |$$ |$$$\\ $$ |$$ |  $$ |\n                    $$ |  $$ |$$ $$ $$\\$$ |$$$$$$$  |\n                    $$ |  $$ |$$$$  _$$$$ |$$  ____/\n                    $$ |  $$ |$$$  / \\$$$ |$$ |\n                    $$$$$$$  |$$  /   \\$$ |$$ |\n                    \\_______/ \\__/     \\__|\\__|\n\n      --- DEVELOPMENT ---\n      gulp (default):  builds and renders server (on port 8080) (use CTRL+C to exit)\n\n\n      --- TESTING ---\n      gulp test:  builds and runs the e2e tests\n\n\nnb: gulp test listens on http://localhost:9000/\n\nnb: Selenium listens on http://localhost:4444/\n\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
+    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n                    $$$$$$$\\  $$\\      $$\\ $$$$$$$\\\n                    $$  __$$\\ $$ | $\\  $$ |$$  __$$\\\n                    $$ |  $$ |$$ |$$$\\ $$ |$$ |  $$ |\n                    $$ |  $$ |$$ $$ $$\\$$ |$$$$$$$  |\n                    $$ |  $$ |$$$$  _$$$$ |$$  ____/\n                    $$ |  $$ |$$$  / \\$$$ |$$ |\n                    $$$$$$$  |$$  /   \\$$ |$$ |\n                    \\_______/ \\__/     \\__|\\__|\n\n      --- DEVELOPMENT ---\n      gulp (default):  builds and renders server (on port 8080) (use CTRL+C to exit)\n\n\n      --- TESTING ---\n      gulp test:  builds and runs the e2e tests\n\n\nnb: gulp test listens on http://localhost:8080/\n\nnb: Selenium listens on http://localhost:4444/\n\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -'
   );
 });
 
@@ -91,6 +91,6 @@ gulp.task('openBrowser', () => {
 
 gulp.task('cleanAll', [ 'cleanSummary', 'cleanXML', 'cleanLogs', 'cleanScreenshots' ]);
 
-gulp.task('default', [ 'clearScreen', 'banner', 'express:dev', 'openBrowser' ]);
+gulp.task('default', [ 'clearScreen', 'banner', 'express:dev' ]);
 
-gulp.task('test', [ 'clearScreen', 'cleanAll', 'banner', 'express:test', 'nightwatch:chrome', 'stopServer' ]);
+gulp.task('test', [ 'clearScreen', 'cleanAll', 'banner', 'express:test', 'nightwatch:chrome' ]);
